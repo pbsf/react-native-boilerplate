@@ -1,0 +1,23 @@
+version: '3.2'
+services:
+  expo:
+    build: .
+    image: expo
+    volumes:
+      - ${VOLUME}
+    ports:
+      - 19000:19000
+      - 19001:19001
+      - 19002:19002
+      - 19006:19006
+    entrypoint:
+      - bash
+    environment:
+      - APP_PATH=${APP_PATH}
+      - REACT_NATIVE_PACKAGER_HOSTNAME=${PHYSICAL_HOST_IP}
+      - YARN_START_CMD=${YARN_START_CMD}
+    command: "./yarn-start.sh"
+
+volumes:
+  dev-root:
+    external: true
