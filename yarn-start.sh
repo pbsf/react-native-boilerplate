@@ -12,7 +12,6 @@ then
   exit 1
 fi
 
-echo $YARN_START_CMD
 cd ${APP_PATH}
 yarn
 yarn $YARN_START_CMD

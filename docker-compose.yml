@@ -17,7 +17,3 @@ services:
       - REACT_NATIVE_PACKAGER_HOSTNAME=${PHYSICAL_HOST_IP}
       - YARN_START_CMD=${YARN_START_CMD}
     command: "./yarn-start.sh"
-
-volumes:
-  dev-root:
-    external: true
